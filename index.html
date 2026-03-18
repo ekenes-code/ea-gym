@@ -234,6 +234,30 @@ to{opacity:1; transform:translateY(0);}
 <input class="ai-input">
 </div>
 
+  <!-- =================== GPTBots.ai виджет =================== -->
+<script src="https://www.gptbots.ai/widget/wec7rnp4pwrpmfwafasggon/chat.js"></script>
+<script>
+window.onload = function() {
+    if(window.GPTBots){
+        window.GPTBots.init({
+            botId: "69b77d5df1ecd66163cd29a8",
+            botIntroduction: "Привет! Я твой AI тренер 💪"
+        });
+        // Перемещаем кнопку в левый нижний угол
+        setTimeout(() => {
+            const btn = document.querySelector('iframe[src*="gptbots.ai"]');
+            if(btn){
+                btn.style.position = "fixed";
+                btn.style.left = "20px";
+                btn.style.bottom = "20px";
+                btn.style.right = "auto";
+                btn.style.zIndex = "99999";
+            }
+        }, 1000);
+    }
+};
+</script>
+
 <!-- МОДАЛКИ -->
 <div id="registerModal" class="modal"><div class="modal-content">Регистрация ✖</div></div>
 <div id="helpModal" class="modal"><div class="modal-content">Помощь ✖</div></div>
