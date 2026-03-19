@@ -294,32 +294,29 @@ EA Gym — современная платформа для людей, кото
 
 </section>
 
-<!-- AI ЧАТ -->
-<div id="aiChat" class="ai-chat">
-  <div class="ai-header">
-    <span>AI ассистент</span>
-    <span id="closeAI" class="close-btn">✖</span>
-  </div>
-  <div class="ai-messages">
-    <p>Привет! Я AI тренер EA Gym 💪</p>
-    <p>Спроси меня о тренировках или питании.</p>
-  </div>
-  <input type="text" placeholder="Задайте вопрос..." class="ai-input">
-</div>
+<script src="https://www.gptbots.ai/widget/wec7rnp4pwrpmfwafasggon/chat.js"></script>
+<script>
+window.onload = function() {
+    if(window.GPTBots){
+        window.GPTBots.init({
+            botId: "69b77d5df1ecd66163cd29a8",
+            botIntroduction: "Привет! Я твой AI тренер 💪"
+        });
 
-<!-- Модальное окно Регистрации -->
-<div id="registerModal" class="modal">
-  <div class="modal-content">
-    <span id="closeRegister" class="close-btn">✖</span>
-    <h2>Регистрация</h2>
-    <form id="registerForm">
-      <input type="text" placeholder="Имя" required>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Пароль" required>
-      <button type="submit" class="btn">Зарегистрироваться</button>
-    </form>
-  </div>
-</div>
+        // Кнопка слева внизу
+        setTimeout(() => {
+            const btn = document.querySelector('iframe[src*="gptbots.ai"]');
+            if(btn){
+                btn.style.position = "fixed";
+                btn.style.left = "20px";
+                btn.style.bottom = "20px";
+                btn.style.right = "auto";
+                btn.style.zIndex = "99999";
+            }
+        }, 1500);
+    }
+};
+</script>
 
 <!-- Модальное окно Помощи -->
 <div id="helpModal" class="modal">
