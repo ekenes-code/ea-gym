@@ -1,34 +1,24 @@
-// Находим элементы
-const aiButton = document.getElementById('aiButton');
-const aiChat = document.getElementById('aiChat');
-const closeAI = document.getElementById('closeAI');
-const aiInput = document.querySelector('.ai-input');
-const aiMessages = document.querySelector('.ai-messages');
+// Переключатель темы
+const themeToggle = document.getElementById("themeToggle");
 
-// Открытие чата по кнопке
-aiButton.addEventListener('click', () => {
-    aiChat.style.display = 'flex';
-    aiInput.focus(); // сразу фокус на поле ввода
-});
+themeToggle.onclick = () => {
+  document.body.classList.toggle("dark");
+  if(document.body.classList.contains("dark")){
+    themeToggle.textContent = "☀️";
+  } else {
+    themeToggle.textContent = "🌙";
+  }
+};
 
-// Закрытие чата по крестику
-closeAI.addEventListener('click', () => {
-    aiChat.style.display = 'none';
-});
+// AI чат
+const aiButton = document.getElementById("aiButton");
+const aiChat = document.getElementById("aiChat");
+const closeAI = document.getElementById("closeAI");
 
-// Обработка отправки сообщения (Enter)
-aiInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter' && aiInput.value.trim() !== '') {
-        const userMessage = aiInput.value.trim();
+aiButton.onclick = () => {
+  aiChat.style.display = "flex"; // открыть
+};
 
-        // Добавляем сообщение пользователя в чат
-        const p = document.createElement('p');
-        p.textContent = userMessage;
-        aiMessages.appendChild(p);
-
-        aiInput.value = ''; // очищаем поле
-
-        // Скроллим чат вниз
-        aiMessages.scrollTop = aiMessages.scrollHeight;
-    }
-});
+closeAI.onclick = () => {
+  aiChat.style.display = "none"; // закрыть
+};
