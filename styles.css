@@ -30,7 +30,6 @@ header {
   padding:20px 10%;
   background:#000;
   color:white;
-    background-image: url("https://www.orfea-acoustique.com/wp-content/uploads/2022/10/AdobeStock_415965143-scaled.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -51,19 +50,17 @@ nav a {
 
 /* Hero */
 .hero {
-  height:80vh;
+  height:70vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-  background:linear-gradient(45deg,#111,#333);
   color:white;
-    background-image: url("https://www.orfea-acoustique.com/wp-content/uploads/2022/10/AdobeStock_415965143-scaled.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
+
+  background-image: url("https://www.orfea-acoustique.com/wp-content/uploads/2022/10/AdobeStock_415965143-scaled.jpeg");
+  background-size:cover;
+  background-position:center;
 }
 
 .hero h2 {
@@ -73,6 +70,7 @@ nav a {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
+
   
 }
 
@@ -109,6 +107,7 @@ nav a {
   background-attachment: fixed;
 }
 .card {
+    
   padding:30px;
   background: var(--card-bg);
   border-radius:12px;
@@ -183,38 +182,103 @@ nav a {
   cursor:pointer;
   font-weight:bold;
 }
-.footer{
+/* ===== О НАС ===== */
 
-background:#000;
+.about{
+padding:100px 10%;
+background:#111;
 color:white;
-
-padding:20px 0;
-
-text-align:center;
-
-margin-top:auto;
-
 }
 
-.footer-text{
+.about-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+}
 
+.about-image img{
+width:300px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
+transition:0.4s;
+}
+
+.about-image img:hover{
+transform:scale(1.05) rotate(2deg);
+}
+
+.about-text{
+max-width:600px;
+animation:fadeUp 1.2s ease;
+}
+
+.about-text h2{
+font-size:42px;
+margin-bottom:20px;
+color:#ff3c3c;
+}
+
+.about-text p{
+margin-bottom:15px;
+line-height:1.6;
+font-size:17px;
+}
+
+/* Анимация появления */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+/* О НАС */
+
+.about-section{
+background:#111;
+padding:100px 10%;
 display:flex;
 justify-content:center;
-align-items:center;
-gap:30px;
-
-font-size:14px;
-
 }
 
-.footer-text a{
-
-color:white;
-text-decoration:none;
-font-weight:600;
-
+.about-box{
+background:#1f1f1f;
+padding:50px;
+border-radius:20px;
+max-width:900px;
+box-shadow:0 20px 50px rgba(0,0,0,0.6);
+animation:fadeUp 1s ease;
 }
 
-.footer-text a:hover{
-text-decoration:underline;
+.about-box h2{
+font-size:40px;
+margin-bottom:20px;
+color:#ff3c3c;
+text-align:center;
+}
+
+.about-box p{
+font-size:17px;
+line-height:1.7;
+margin-bottom:15px;
+color:#ddd;
+}
+
+/* Анимация */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
