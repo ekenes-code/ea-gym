@@ -192,5 +192,27 @@
   </template>
 
   <script src="workouts.js"></script>
+  <script>
+window.onload = function() {
+    if(window.GPTBots){
+        window.GPTBots.init({
+            botId: "69b77d5df1ecd66163cd29a8",
+            botIntroduction: "Привет! Я твой AI тренер 💪"
+        });
+
+        // Кнопка слева внизу
+        setTimeout(() => {
+            const btn = document.querySelector('iframe[src*="gptbots.ai"]');
+            if(btn){
+                btn.style.position = "fixed";
+                btn.style.left = "20px";
+                btn.style.bottom = "20px";
+                btn.style.right = "auto";
+                btn.style.zIndex = "99999";
+            }
+        }, 1500);
+    }
+};
+</script>
 </body>
 </html>
