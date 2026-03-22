@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EA Gym — Программы тренировок</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/023/658/229/non_2x/ea-monogram-logo-design-illustration-vector.jpg" type="image/jpg">
+  <link rel="stylesheet" href="workouts.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">EA</span>
+        <span class="brand-text">
+          <strong>EA Gym</strong>
+          <small>Your elite training space</small>
+        </span>
+      </a>
+
+      <nav class="nav">
+        <a href="../index.html">Главная</a>
+        <a class="active" href="workouts.html">Программы</a>
+        <a href="meals.html">Блюда</a>
+        <a href="shop.html">Магазин</a>
+        <a href="register.html">Регистрация</a>
+        <a href="help.html">Помощь</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-copy">
+          <span class="eyebrow">Готовые планы и персональные сплиты</span>
+          <h1>Выбирай тренировочную программу под свою цель и создавай собственную без потери данных.</h1>
+          <p>
+            Подборка включает full body, upper/lower, классические сплиты и вдохновляющие схемы по мотивам
+            именитых бодибилдеров. Свои программы сохраняются в браузере через <strong>localStorage</strong>,
+            поэтому они не исчезнут после перезагрузки страницы.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#program-library">Смотреть программы</a>
+            <a class="secondary-btn" href="#custom-builder">Создать свою</a>
+          </div>
+          <ul class="hero-points">
+            <li>Фильтрация по целям</li>
+            <li>Карточки с акцентом на интерфейс главной страницы</li>
+            <li>Добавление и удаление персональных программ</li>
+          </ul>
+        </div>
+
+        <aside class="hero-highlight">
+          <div class="hero-stat-card glass-card">
+            <span>Доступно сейчас</span>
+            <strong>10+ программ</strong>
+            <p>Для массы, рельефа, силы и дисциплины.</p>
+          </div>
+          <div class="hero-image-card glass-card">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80" alt="Атлет в тренажерном зале">
+            <div class="hero-image-overlay">
+              <h2>Train like a champion</h2>
+              <p>Сильный визуал, премиальный стиль и удобная структура.</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section-block" id="program-library">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Workout library</span>
+            <h2>Готовые тренировочные программы</h2>
+          </div>
+          <div class="filters" id="filters">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="mass">Масса</button>
+            <button class="filter-btn" data-filter="strength">Сила</button>
+            <button class="filter-btn" data-filter="cut">Рельеф</button>
+            <button class="filter-btn" data-filter="classic">Классика</button>
+          </div>
+        </div>
+
+        <div class="program-grid" id="programGrid"></div>
+      </section>
+
+      <section class="section-block inspiration-section">
+        <div class="section-heading compact">
+          <div>
+            <span class="eyebrow">Legendary inspiration</span>
+            <h2>Подходы по мотивам легенд бодибилдинга</h2>
+          </div>
+          <p class="section-description">
+            Это не буквальные исторические копии, а адаптированные современные версии популярных подходов знаменитых атлетов.
+          </p>
+        </div>
+        <div class="legend-grid" id="legendGrid"></div>
+      </section>
+
+      <section class="section-block custom-section" id="custom-builder">
+        <div class="custom-layout">
+          <div class="builder-card glass-card">
+            <span class="eyebrow">Custom program builder</span>
+            <h2>Создай свою тренировочную программу</h2>
+            <p>
+              Заполни форму: название, цель, частоту и упражнения. После сохранения программа появится внизу и
+              останется после перезагрузки страницы.
+            </p>
+
+            <form id="customProgramForm" class="builder-form">
+              <label>
+                Название программы
+                <input type="text" id="programTitle" placeholder="Например: Мой силовой upper/lower" required>
+              </label>
+              <label>
+                Цель
+                <select id="programGoal" required>
+                  <option value="mass">Набор массы</option>
+                  <option value="strength">Сила</option>
+                  <option value="cut">Рельеф</option>
+                  <option value="classic">Классический бодибилдинг</option>
+                </select>
+              </label>
+              <label>
+                Частота
+                <input type="text" id="programFrequency" placeholder="Например: 4 дня в неделю" required>
+              </label>
+              <label>
+                Краткое описание
+                <textarea id="programDescription" rows="4" placeholder="Какая идея программы, на кого рассчитана, какие принципы используются?" required></textarea>
+              </label>
+              <label>
+                Тренировочные дни и упражнения
+                <textarea id="programExercises" rows="8" placeholder="День 1 — Грудь/Трицепс: жим лежа 4x8, жим гантелей 3x10...
+День 2 — Спина/Бицепс: подтягивания 4x8..." required></textarea>
+              </label>
+              <button type="submit" class="primary-btn wide-btn">Сохранить программу</button>
+            </form>
+          </div>
+
+          <div class="custom-side">
+
+
+            <div class="quote-card glass-card">
+              <p>“Discipline is doing what needs to be done, even if you don’t want to do it.”</p>
+              <span>— дух чемпионского подхода EA Gym</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block saved-section">
+        <div class="section-heading compact">
+          <div>
+            <span class="eyebrow">Saved by you</span>
+            <h2>Мои программы</h2>
+          </div>
+          <p class="section-description">Карточки ниже сохраняются в браузере и не исчезают после обычной перезагрузки страницы.</p>
+        </div>
+        <div class="saved-programs" id="savedPrograms"></div>
+      </section>
+    </main>
+  </div>
+
+  <template id="programCardTemplate">
+    <article class="program-card glass-card">
+      <div class="program-card-top">
+        <span class="program-badge"></span>
+        <span class="program-frequency"></span>
+      </div>
+      <h3 class="program-title"></h3>
+      <p class="program-description"></p>
+      <ul class="program-days"></ul>
+    </article>
+  </template>
+
+  <template id="savedProgramTemplate">
+    <article class="saved-card glass-card">
+      <div class="saved-card-head">
+        <div>
+          <span class="program-badge"></span>
+          <h3 class="saved-title"></h3>
+        </div>
+        <button class="delete-btn" type="button">Удалить</button>
+      </div>
+      <p class="saved-frequency"></p>
+      <p class="saved-description"></p>
+      <pre class="saved-exercises"></pre>
+    </article>
+  </template>
+
+  <script src="workouts.js"></script>
+</body>
+</html>
