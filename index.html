@@ -1,265 +1,148 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EA Gym</title>
-
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="icon" href="https://static.vecteezy.com/system/resources/previews/023/658/229/non_2x/ea-monogram-logo-design-illustration-vector.jpg" type="image/jpg">
-
-<style>
-/* =================== CSS =================== */
-
-/* Общая тема */
-:root {
-  --bg: #ffffff;
-  --text: #111;
-  --accent: #ff3c3c;
-  --card-bg: #f4f4f4;
-}
-
-body {
-  margin:0;
-  font-family: 'Montserrat', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  transition: 0.3s;
-}
-
-/* Тёмная тема */
-.dark {
-  --bg: #111;
-  --text: #fff;
-  --card-bg: #1f1f1f;
-}
-
-/* Header и навигация */
-header {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 10%;
-  background:#000;
-  color:white;
-  background-image: url("https://www.orfea-acoustique.com/wp-content/uploads/2022/10/AdobeStock_415965143-scaled.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-}
-
-nav a {
-  margin:0 10px;
-  color:white;
-  text-decoration:none;
-  font-weight:600;
-}
-
-/* Hero */
-.hero {
-  height:80vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:linear-gradient(45deg,#111,#333);
-  color:white;
-  background-image: url("https://www.orfea-acoustique.com/wp-content/uploads/2022/10/AdobeStock_415965143-scaled.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-}
-
-.hero h2 {
-  font-size:60px;
-}
-
-/* Кнопки */
-.btn {
-  padding:12px 25px;
-  background: var(--accent);
-  border:none;
-  border-radius:6px;
-  color:white;
-  text-decoration:none;
-  margin:10px;
-  transition:0.3s;
-}
-.btn:hover {
-  transform:scale(1.05);
-}
-.btn-outline {
-  background:none;
-  border:2px solid white;
-}
-
-/* Контролы (AI + тема) */
-.controls {
-  display:flex;
-  gap:10px;
-}
-.icon-btn {
-  width:40px;
-  height:40px;
-  border:none;
-  border-radius:10px;
-  font-size:18px;
-  cursor:pointer;
-  background:#222;
-  color:white;
-  transition:0.3s;
-}
-.icon-btn:hover {
-  transform:scale(1.1);
-  background:#ff3c3c;
-}
-.ai-btn {
-  background:#ff3c3c;
-}
-
-.close-btn {
-  cursor:pointer;
-  font-weight:bold;
-}
-
-/* FOOTER */
-.footer{
-  background:#000;
-  color:white;
-  padding:20px 0;
-  text-align:center;
-  margin-top:auto;
-}
-
-.footer-text{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:30px;
-  font-size:14px;
-}
-
-.footer-text a{
-  color:white;
-  text-decoration:none;
-  font-weight:600;
-}
-
-.footer-text a:hover{
-  text-decoration:underline;
-}
-
-/* =================== Модальные окна =================== */
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 10000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 400px;
-  position: relative;
-}
-
-.modal .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.modal input, .modal textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius:6px;
-  border:1px solid #ccc;
-  outline:none;
-}
-</style>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EA Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/023/658/229/non_2x/ea-monogram-logo-design-illustration-vector.jpg" type="image/jpg">
+  <link rel="stylesheet" href="styles.css">
 </head>
+<body><header class="site-header">
+    <div class="logo-wrap">
+      <span class="logo-mark">EA</span>
+      <div>
+        <h1 class="logo">EA Gym</h1>
+        <p class="logo-subtitle">fitness & workouts</p>
+      </div>
+    </div>
 
-<body>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-<header>
-<h1 class="logo">EA Gym</h1>
-<nav>
-  <a href="index.html">Главная</a>
-  <a href="pages/workouts.html">Программы тренировок</a>
-  <a href="pages/meals.html">Блюда</a>
-  <a href="pages/shop.html">Магазин одежды</a>
-  <a href="pages/register.html">Регистрация</a>
-  <a href="pages/help.html">Помощь</a>
-</nav>
+    <nav id="mainNav" class="site-nav" aria-label="Основная навигация">
+      <a href="index.html" class="active">Главная</a>
+      <a href="pages/workouts.html">Программы тренировок</a>
+      <a href="pages/meals.html">Блюда</a>
+      <a href="pages/shop.html">Магазин одежды</a>
+      <button type="button" class="nav-link modal-trigger" data-tab="register">Регистрация</button>
+      <button type="button" class="nav-link modal-trigger" data-tab="help">Помощь</button>
+    </nav>
+  </header>
 
-<div class="controls">
-  <button id="aiButton" class="icon-btn ai-btn" title="AI ассистент">🤖</button>
-</div>
-</header>
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">EA Gym • Твой фитнес-ритм</p>
+        <h2>Прокачай тело, дисциплину и результат.</h2>
+        <p class="hero-text">
+          Совмещай тренировки, питание и мотивацию в одном пространстве. Главная страница
+          подготовлена в стиле блока workouts и готова для вставки на основной сайт gptbotsai.
+        </p>
+        <div class="hero-actions">
+          <a href="pages/workouts.html" class="btn btn-primary">Перейти к тренировкам</a>
+          <button type="button" class="btn btn-secondary modal-trigger" data-tab="register">Начать сейчас</button>
+        </div>
+      </div>
+    </section>
 
-<section class="hero">
-<h2>Прокачай своё тело</h2>
-<p>Создавай программы тренировок, следи за питанием и становись сильнее вместе с EA Gym</p>
+    <section class="welcome-section">
+      <div class="section-card intro-card">
+        <p class="section-label">Добро пожаловать</p>
+        <h3>Главная страница EA Gym</h3>
+        <p>
+          Здесь пользователь быстро попадает к программам тренировок, разделам питания и магазину.
+          Интерфейс сохранён узнаваемым, но стал чище, современнее и удобнее для мобильных устройств.
+        </p>
+      </div>
 
-<div class="hero-buttons">
-  <a href="pages/workouts.html" class="btn">Найти программу</a>
-  <a href="pages/workouts.html" class="btn btn-outline">Создать программу</a>
-</div>
-</section>
+      <div class="section-card benefits-card">
+        <h3>Что есть на сайте</h3>
+        <ul class="benefits-list">
+          <li>Программы тренировок для разного уровня подготовки.</li>
+          <li>Поддержка разделов с блюдами и спортивной одеждой.</li>
+          <li>Единое модальное окно с регистрацией, помощью и политикой конфиденциальности.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-<section class="about-section">
+  <div class="modal" id="infoModal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button type="button" class="modal-close" aria-label="Закрыть модальное окно">×</button>
 
-<div class="about-box">
+      <div class="modal-tabs" role="tablist" aria-label="Информация сайта">
+        <button type="button" class="tab-button active" role="tab" aria-selected="true" data-tab-target="register">Регистрация</button>
+        <button type="button" class="tab-button" role="tab" aria-selected="false" data-tab-target="help">Помощь</button>
+        <button type="button" class="tab-button" role="tab" aria-selected="false" data-tab-target="privacy">Политика конфиденциальности</button>
+      </div>
 
-<h2>О нас</h2>
+      <div class="tab-panel active" id="register" role="tabpanel">
+        <h3 id="modalTitle">Регистрация</h3>
+        <p class="tab-text">Создайте аккаунт EA Gym, чтобы сохранять планы и быстрее возвращаться к тренировкам.</p>
+        <form class="register-form">
+          <label>
+            Имя
+            <input type="text" name="name" placeholder="Ваше имя" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="example@email.com" required>
+          </label>
+          <label>
+            Пароль
+            <input type="password" name="password" placeholder="Введите пароль" required>
+          </label>
+          <button type="submit" class="btn btn-primary form-submit">Зарегистрироваться</button>
+        </form>
+        <p class="form-status" aria-live="polite"></p>
+      </div>
 
-<p>
-EA Gym — современная платформа для людей, которые хотят улучшить своё тело,
-здоровье и физическую форму.
-</p>
+      <div class="tab-panel" id="help" role="tabpanel" hidden>
+        <h3>Помощь</h3>
+        <p class="tab-text">
+          EA Gym помогает выбрать тренировочные программы, подобрать полезные разделы сайта и быстрее
+          найти нужную информацию о функционале платформы.
+        </p>
+        <div class="info-block">
+          <p><strong>Как пользоваться сайтом:</strong> начните с раздела тренировок, затем переходите к питанию и магазину.</p>
+          <p><strong>Контакты:</strong> support@eagym.com • +1 (800) 555-0199</p>
+          <p><strong>Часы ответа:</strong> ежедневно с 08:00 до 20:00 UTC.</p>
+        </div>
+      </div>
 
-<p>
-Мы предоставляем <b>индивидуальные программы тренировок</b>,
-которые подходят как новичкам, так и профессиональным спортсменам.
-</p>
+      <div class="tab-panel" id="privacy" role="tabpanel" hidden>
+        <h3>Политика конфиденциальности</h3>
+        <p class="tab-text">
+          Мы используем только данные, необходимые для регистрации, обратной связи и улучшения пользовательского опыта.
+          Персональная информация не передаётся третьим лицам без законных оснований.
+        </p>
+        <div class="info-block">
+          <p>Отправляя форму, пользователь подтверждает согласие на обработку имени, email и технических данных сессии.</p>
+          <p>Данные защищаются и применяются только для работы сервиса EA Gym и коммуникации с пользователем.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <footer class="site-footer">
+    <div>
+      <p>© 2026 EA Gym</p>
+      <p class="footer-credit">Powered by gptbotsai</p>
+    </div>
+    <div class="footer-links">
+      <button type="button" class="footer-link-button modal-trigger" data-tab="help">Помощь</button>
+      <button type="button" class="footer-link-button modal-trigger" data-tab="privacy">Политика конфиденциальности</button>
+    </div>
+  </footer>
 
-<p>
-На сайте доступен <b>собственный магазин спортивной одежды</b>,
-где вы можете приобрести экипировку для тренировок.
-</p>
-
-<p>
-Наш <b>AI-помощник</b> помогает подобрать правильное питание,
-подсказывает полезные блюда и отвечает на вопросы о тренировках.
-</p>
-
-<p>
-Наша цель — помочь каждому человеку стать сильнее,
-здоровее и увереннее в себе.
-</p>
-
-</div>
-
-</section>
-
-<script src="https://www.gptbots.ai/widget/wec7rnp4pwrpmfwafasggon/chat.js"></script>
+  <script src="script.js"></script>
+  <script src="https://www.gptbots.ai/widget/wec7rnp4pwrpmfwafasggon/chat.js"></script>
 <script>
 window.onload = function() {
     if(window.GPTBots){
@@ -282,180 +165,5 @@ window.onload = function() {
     }
 };
 </script>
-
-<!-- Модальное окно Помощи -->
-<div id="helpModal" class="modal">
-  <div class="modal-content">
-    <span id="closeHelp" class="close-btn">✖</span>
-    <h2>Помощь</h2>
-    <p>Здесь вы можете задать вопросы по тренировкам, питанию и работе сайта.</p>
-    <textarea placeholder="Ваш вопрос..." rows="5"></textarea>
-    <button class="btn" style="margin-top:10px;">Отправить</button>
-  </div>
-</div>
-
-<div id="contactsModal" class="modal">
-
-  <div class="modal-content">
-
-    <span id="closeContacts" class="close-btn">✖</span>
-
-    <h2>Контакты директоров</h2>
-
-    <p><b>Директор 1:</b></p>
-    <p>Телефон: +7 900 123 45 67</p>
-    <p>Email: director1@eagym.com</p>
-
-    <br>
-
-    <p><b>Директор 2:</b></p>
-    <p>Телефон: +7 900 765 43 21</p>
-    <p>Email: director2@eagym.com</p>
-
-  </div>
-
-</div>
-<!-- Политика конфиденциальности -->
-<div id="privacyModal" class="modal">
-
-  <div class="modal-content">
-
-    <span id="closePrivacy" class="close-btn">✖</span>
-
-    <h2>Политика конфиденциальности</h2>
-
-    <p>
-    Мы уважаем вашу конфиденциальность. Сайт EA Gym собирает только необходимые
-    данные для регистрации пользователей и улучшения сервиса.
-    </p>
-
-    <p>
-    Ваши персональные данные (имя, email) не передаются третьим лицам
-    и используются только для работы платформы.
-    </p>
-
-    <p>
-    Используя сайт EA Gym, вы соглашаетесь с данной политикой обработки данных.
-    </p>
-
-  </div>
-
-</div>
-
-<footer class="footer">
-<p class="footer-text">
-© 2026 EA Gym
-<a href="pages/help.html">FAQ</a>
-<a href="#">Contacts</a>
-<a href="#" id="privacyLink">Политика конфиденциальности</a>
-</p>
-</footer>
-
-
-<script>
-// =================== JS ===================
-
-// AI чат
-const aiButton = document.getElementById('aiButton');
-const aiChat = document.getElementById('aiChat');
-const closeAI = document.getElementById('closeAI');
-const aiInput = document.querySelector('.ai-input');
-const aiMessages = document.querySelector('.ai-messages');
-
-aiButton.addEventListener('click', () => {
-    aiChat.style.display = 'flex';
-    aiInput.focus();
-});
-
-closeAI.addEventListener('click', () => {
-    aiChat.style.display = 'none';
-});
-
-aiInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter' && aiInput.value.trim() !== '') {
-        const userMessage = aiInput.value.trim();
-        const p = document.createElement('p');
-        p.textContent = userMessage;
-        aiMessages.appendChild(p);
-        aiInput.value = '';
-        aiMessages.scrollTop = aiMessages.scrollHeight;
-    }
-});
-
-// Регистрация
-const registerLink = document.querySelector('a[href="pages/register.html"]');
-const registerModal = document.getElementById('registerModal');
-const closeRegister = document.getElementById('closeRegister');
-
-registerLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    registerModal.style.display = 'flex';
-});
-
-closeRegister.addEventListener('click', () => {
-    registerModal.style.display = 'none';
-});
-
-// Помощь
-const helpLink = document.querySelector('a[href="pages/help.html"]');
-const helpModal = document.getElementById('helpModal');
-const closeHelp = document.getElementById('closeHelp');
-
-helpLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    helpModal.style.display = 'flex';
-});
-
-closeHelp.addEventListener('click', () => {
-    helpModal.style.display = 'none';
-});
-
-// Закрытие по клику вне модалки
-window.addEventListener('click', (e) => {
-    if (e.target === registerModal) registerModal.style.display = 'none';
-    if (e.target === helpModal) helpModal.style.display = 'none';
-});
-
-// CONTACTS
-const contactsLink = document.querySelector('.footer-text a[href="#"]');
-const contactsModal = document.getElementById('contactsModal');
-const closeContacts = document.getElementById('closeContacts');
-
-contactsLink.addEventListener('click', function(e){
-  e.preventDefault();
-  contactsModal.style.display = 'flex';
-});
-
-closeContacts.addEventListener('click', function(){
-  contactsModal.style.display = 'none';
-});
-
-window.addEventListener('click', function(e){
-  if(e.target === contactsModal){
-    contactsModal.style.display = 'none';
-  }
-});
-// Политика конфиденциальности
-const privacyLink = document.getElementById('privacyLink');
-const privacyModal = document.getElementById('privacyModal');
-const closePrivacy = document.getElementById('closePrivacy');
-
-privacyLink.addEventListener('click', function(e){
-  e.preventDefault();
-  privacyModal.style.display = 'flex';
-});
-
-closePrivacy.addEventListener('click', function(){
-  privacyModal.style.display = 'none';
-});
-
-window.addEventListener('click', function(e){
-  if(e.target === privacyModal){
-    privacyModal.style.display = 'none';
-  }
-});
-</script>
-
-
 </body>
 </html>
