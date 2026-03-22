@@ -431,3 +431,57 @@ button {
     padding-right: 0;
   }
 }
+
+/* === АДАПТАЦИЯ ПОД ТЕЛЕФОН === */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Контейнеры */
+  .container, .wrapper, .content {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Флекс блоки становятся вертикальными */
+  .row, .flex, nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Картинки */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Кнопки */
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Модальное окно */
+  .modal-content {
+    width: 95% !important;
+    max-width: 400px;
+    padding: 15px;
+  }
+
+  /* Текст */
+  h1, h2, h3 {
+    text-align: center;
+  }
+
+  /* Навигация */
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
